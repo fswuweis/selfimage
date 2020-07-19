@@ -30,10 +30,8 @@ async def image(bot, ev: CQEvent):
     #sv.logger.info("识图 start")
     #image_data = session.get('image', prompt='图呢？GKD')
     ret = re.match(r"\[CQ:image,file=(.*),url=(.*)\]", str(ev.message))
-    sv.logger.info(ret.group(2))
     image_data = ret.group(2)
-    image_data_report = await get_image_data(image_data, SAUCENAO_KEY)
-    sv.logger.info("识图 2222")
+    image_data_report = await get_image_data(image_data, SAUCENAO_KEY, sv)
     
     if image_data_report:
         #await session.send(image_data_report)

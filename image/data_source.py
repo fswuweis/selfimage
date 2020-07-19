@@ -14,7 +14,7 @@ TIMELIMIT_IMAGE = 7
 
 
 class SauceNAO():
-    def __init__(self, api_key, output_type=2, testmode=0, dbmask=None, dbmaski=None, db=999, numres=3, shortlimit=20, longlimit=300):
+    def __init__(self, api_key, sv, output_type=2, testmode=0, dbmask=None, dbmaski=None, db=999, numres=3, shortlimit=20, longlimit=300):
         params = dict()
         params['api_key'] = api_key
         params['output_type'] = output_type
@@ -25,11 +25,12 @@ class SauceNAO():
         params['numres'] = numres
         self.params = params
         self.header = "————>saucenao<————"
+        self.sv = sv
 
 
     def get_sauce(self, url):
         self.params['url'] = url
-        sv.logger.debug("Now starting get the SauceNAO data")
+        self.sv.logger.debug("Now starting get the SauceNAO data")
         response = requests.get('https://saucenao.com/search.php', params=self.params)
         data = response.json()
         
@@ -56,9 +57,10 @@ class SauceNAO():
 
 
 class ascii2d():
-    def __init__(self, num=2):
+    def __init__(self, sv, num=2):
         self.num = num
         self.header = "————>ascii2d<————"
+        self.sv = sv
 
 
     def get_search_data(self, url: str, data=None):
@@ -90,13 +92,13 @@ class ascii2d():
     def get_view(self, ascii2d) -> str:
         repass = ''
         url_index = "https://ascii2d.net/search/url/{}".format(ascii2d)
-        sv.logger.debug("Now starting get the {}".format(url_index))
+        self.sv.logger.debug("Now starting get the {}".format(url_index))
 
         try:
             html_index_data = requests.get(url_index)
             html_index = etree.HTML(html_index_data.text)
         except Exception as e:
-            sv.logger.warning("ascii2d get html data failed: ".format(e))
+            self.sv.logger.warning("ascii2d get html data failed: ".format(e))
             return repass
 
         neet_div = html_index.xpath('//div[@class="detail-link pull-xs-right hidden-sm-down gray-link"]')
@@ -124,7 +126,7 @@ class ascii2d():
 @timeout(TIMELIMIT_IMAGE)
 async def get_view(sc, image_url: str) -> str:
     header = sc.header
-    sv.logger.debug("Now starting get the {}".format(header))
+    sc.sv.logger.debug("Now starting get the {}".format(header))
     view = ''
     putline = ''
 
@@ -132,19 +134,18 @@ async def get_view(sc, image_url: str) -> str:
 
     if view:
         putline = "\n\n".join([header, view])
-    else: sv.logger.error("Loading {} page failed".format(header))
+    else: sc.sv.logger.error("Loading {} page failed".format(header))
 
     return putline
 
 
-async def get_image_data(image_url: str, api_key: str):
+async def get_image_data(image_url: str, api_key: str, sv):
     if type(image_url) == list:
         image_url = image_url[0]
 
-    sv.logger.info("image_url=" + image_url)
     sv.logger.info("Loading Image Search Container……")
-    NAO = SauceNAO(api_key)
-    ii2d = ascii2d()
+    NAO = SauceNAO(api_key, sv)
+    ii2d = ascii2d(sv)
 
     sv.logger.debug("Loading all view……")
     repass = ''
