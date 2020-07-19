@@ -1,15 +1,15 @@
 from nonebot import on_command, CommandSession
 from nonebot import on_natural_language, NLPSession, IntentCommand
+from nonebot import permission as perm
 
 from .data_source import get_image_data
-from ...xlog import xlogger
-from xunbot import get_bot
+#from ...xlog import xlogger
+#from xunbot import get_bot
 
 
 __plugin_name__ = '识图'
 __plugin_usage__ = r"""
 以图识图
-
 搜图 [图片]
 识图 [图片]
 image [图片]
@@ -17,7 +17,7 @@ image [图片]
 """.strip()
 
 
-@on_command('image', aliases=('image', '搜图', '识图', '搜圖', '識圖'), permission=get_bot().level)
+@on_command('image', aliases=('image', '搜图', '识图', '搜圖', '識圖'), permission=perm.GROUP_ADMIN, only_to_me=False)
 async def image(session: CommandSession):
     image_data = session.get('image', prompt='图呢？GKD')
     image_data_report = await get_image_data(image_data, session.bot.config.SAUCENAO_KEY)
@@ -25,7 +25,7 @@ async def image(session: CommandSession):
     if image_data_report:
         await session.send(image_data_report)
     else:
-        xlogger.error("Not found imageInfo")
+        #xlogger.error("Not found imageInfo")
         await session.send("[ERROR]Not found imageInfo")
 
 

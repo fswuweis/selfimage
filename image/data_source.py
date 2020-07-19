@@ -4,10 +4,10 @@ from lxml import etree
 
 from kth_timeoutdecorator import *
 
-from xunbot import get_bot
-from ...xlog import xlogger
+#from xunbot import get_bot
+#from ...xlog import xlogger
 
-TIMELIMIT_IMAGE = get_bot().config.TIMELIMIT_IMAGE
+TIMELIMIT_IMAGE = 7
 
 
 class SauceNAO():
@@ -26,7 +26,7 @@ class SauceNAO():
 
     def get_sauce(self, url):
         self.params['url'] = url
-        xlogger.debug("Now starting get the SauceNAO data")
+        #xlogger.debug("Now starting get the SauceNAO data")
         response = requests.get('https://saucenao.com/search.php', params=self.params)
         data = response.json()
         
@@ -87,13 +87,13 @@ class ascii2d():
     def get_view(self, ascii2d) -> str:
         repass = ''
         url_index = "https://ascii2d.net/search/url/{}".format(ascii2d)
-        xlogger.debug("Now starting get the {}".format(url_index))
+        #xlogger.debug("Now starting get the {}".format(url_index))
 
         try:
             html_index_data = requests.get(url_index)
             html_index = etree.HTML(html_index_data.text)
         except Exception as e:
-            xlogger.error("ascii2d get html data failed: ".format(e))
+            #xlogger.error("ascii2d get html data failed: ".format(e))
             return repass
 
         neet_div = html_index.xpath('//div[@class="detail-link pull-xs-right hidden-sm-down gray-link"]')
@@ -121,7 +121,7 @@ class ascii2d():
 @timeout(TIMELIMIT_IMAGE)
 async def get_view(sc, image_url: str) -> str:
     header = sc.header
-    xlogger.debug("Now starting get the {}".format(header))
+    #xlogger.debug("Now starting get the {}".format(header))
     view = ''
     putline = ''
 
@@ -129,7 +129,7 @@ async def get_view(sc, image_url: str) -> str:
 
     if view:
         putline = "\n\n".join([header, view])
-    else: xlogger.error("Loading {} page failed".format(header))
+    else: pass#xlogger.error("Loading {} page failed".format(header))
 
     return putline
 
@@ -138,11 +138,11 @@ async def get_image_data(image_url: str, api_key: str):
     if type(image_url) == list:
         image_url = image_url[0]
 
-    xlogger.info("Loading Image Search Container……")
+    #xlogger.info("Loading Image Search Container……")
     NAO = SauceNAO(api_key)
     ii2d = ascii2d()
 
-    xlogger.debug("Loading all view……")
+    #xlogger.debug("Loading all view……")
     repass = ''
     for sc in [NAO, ii2d]:
         try:
@@ -153,6 +153,7 @@ async def get_image_data(image_url: str, api_key: str):
                 else:
                     repass = putline
         except TimeoutException as e:
-            xlogger.error(e)
+            #xlogger.error(e)
+            pass
 
     return repass
