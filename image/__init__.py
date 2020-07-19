@@ -25,11 +25,11 @@ SAUCENAO_KEY = '3aa67c1500157dbaaa04407ed990a9eb21d40c79'#https://saucenao.com/�
 #@on_command('image', aliases=('image', '搜图', '识图', '搜圖', '識圖'), permission=perm.GROUP_ADMIN, only_to_me=False)
 @sv.on_prefix(('识图', 'image', '搜图'))
 async def image(session: CommandSession):
-    pritnt('1111')
+    sv.logger.info("识图 start")
     image_data = session.get('image', prompt='图呢？GKD')
-    pritnt(image_data)
+    sv.logger.info("识图 1111")
     image_data_report = await get_image_data(image_data, SAUCENAO_KEY)
-    pritnt(image_data_report)
+    sv.logger.info("识图 2222")
     
     if image_data_report:
         await session.send(image_data_report)

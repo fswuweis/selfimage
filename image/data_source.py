@@ -141,6 +141,7 @@ async def get_image_data(image_url: str, api_key: str):
     if type(image_url) == list:
         image_url = image_url[0]
 
+    sv.logger.info("image_url=" + image_url)
     sv.logger.info("Loading Image Search Container……")
     NAO = SauceNAO(api_key)
     ii2d = ascii2d()
