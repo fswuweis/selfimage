@@ -23,23 +23,17 @@ sv = Service('image', enable_on_default=True, bundle='通用', help_=__plugin_us
 SAUCENAO_KEY = '3aa67c1500157dbaaa04407ed990a9eb21d40c79'#https://saucenao.com/自行申请
 
 
-#@on_command('image', aliases=('image', '搜图', '识图', '搜圖', '識圖'), permission=perm.GROUP_ADMIN, only_to_me=False)
-#async def image(session: CommandSession):
 @sv.on_prefix(('识图', 'image', '搜图'))
 async def image(bot, ev: CQEvent):
-    #sv.logger.info("识图 start")
-    #image_data = session.get('image', prompt='图呢？GKD')
     ret = re.match(r"\[CQ:image,file=(.*),url=(.*)\]", str(ev.message))
     image_data = ret.group(2)
     image_data_report = await get_image_data(image_data, SAUCENAO_KEY, sv)
     
     if image_data_report:
-        #await session.send(image_data_report)
-        bot.send(ev, image_data_report)
+        await bot.send(ev, image_data_report)
     else:
         sv.logger.warning("Not found imageInfo")
-        #await session.send("[ERROR]Not found imageInfo")
-        bot.send(ev, "[ERROR]Not found imageInfo")
+        await bot.send(ev, "[ERROR]Not found imageInfo")
 
 
 @image.args_parser
