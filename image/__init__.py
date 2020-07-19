@@ -1,3 +1,4 @@
+import re
 from nonebot import on_command, CommandSession
 from nonebot import on_natural_language, NLPSession, IntentCommand
 from nonebot import permission as perm
@@ -25,9 +26,11 @@ SAUCENAO_KEY = '3aa67c1500157dbaaa04407ed990a9eb21d40c79'#https://saucenao.com/�
 #@on_command('image', aliases=('image', '搜图', '识图', '搜圖', '識圖'), permission=perm.GROUP_ADMIN, only_to_me=False)
 @sv.on_prefix(('识图', 'image', '搜图'))
 async def image(session: CommandSession):
-    sv.logger.info("识图 start")
-    image_data = session.get('image', prompt='图呢？GKD')
-    sv.logger.info("识图 1111")
+    #sv.logger.info("识图 start")
+    #image_data = session.get('image', prompt='图呢？GKD')
+    ret = re.match(r"\[CQ:image,file=(.*),url=(.*)\]", str(ev.message))
+    sv.logger.info(ret.group(2))
+    image_data = ret.group(2)
     image_data_report = await get_image_data(image_data, SAUCENAO_KEY)
     sv.logger.info("识图 2222")
     
