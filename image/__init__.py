@@ -3,9 +3,12 @@ from nonebot import on_natural_language, NLPSession, IntentCommand
 from nonebot import permission as perm
 
 from .data_source import get_image_data
-#from ...xlog import xlogger
-#from xunbot import get_bot
 
+from hoshino import Service, R, priv
+from hoshino.typing import *
+from hoshino.util import DailyNumberLimiter, pic2b64, concat_pic, silence
+from hoshino import util
+from hoshino.modules.priconne import chara
 
 __plugin_name__ = '识图'
 __plugin_usage__ = r"""
@@ -15,7 +18,7 @@ __plugin_usage__ = r"""
 image [图片]
 [NLP模块] XXX搜图XXX图片XXX
 """.strip()
-
+sv = Service('image', enable_on_default=True, bundle='通用', help_='识图[图片]')
 
 @on_command('image', aliases=('image', '搜图', '识图', '搜圖', '識圖'), permission=perm.GROUP_ADMIN, only_to_me=False)
 async def image(session: CommandSession):
@@ -25,7 +28,7 @@ async def image(session: CommandSession):
     if image_data_report:
         await session.send(image_data_report)
     else:
-        #xlogger.error("Not found imageInfo")
+        sv.logger.warning("Not found imageInfo")
         await session.send("[ERROR]Not found imageInfo")
 
 
@@ -44,7 +47,7 @@ async def _(session: CommandSession):
     session.state[session.current_key] = image_arg
 
 
-@on_natural_language(keywords={'image', '搜图', '识图', '搜圖', '識圖'}, permission=get_bot().level)
+@on_natural_language(keywords={'image', '搜图', '识图', '搜圖', '識圖'}, permission=perm.GROUP_ADMIN)
 async def _(session: NLPSession):
     msg = session.msg
     return IntentCommand(90.0, 'image', current_arg=msg or '')
