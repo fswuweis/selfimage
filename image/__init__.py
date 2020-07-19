@@ -18,15 +18,18 @@ __plugin_usage__ = r"""
 image [图片]
 [NLP模块] XXX搜图XXX图片XXX
 """.strip()
-sv = Service('image', enable_on_default=True, bundle='通用', help_='识图[图片]')
-SAUCENAO_KEY = '3aa67c1500157dbaaa04407ed990a9eb21d40c79'
+sv = Service('image', enable_on_default=True, bundle='通用', help_=__plugin_usage__)
+SAUCENAO_KEY = '3aa67c1500157dbaaa04407ed990a9eb21d40c79'#https://saucenao.com/自行申请
 
 
 #@on_command('image', aliases=('image', '搜图', '识图', '搜圖', '識圖'), permission=perm.GROUP_ADMIN, only_to_me=False)
-@sv.on_prefix('识图', 'image', '搜图')
+@sv.on_prefix(('识图', 'image', '搜图'))
 async def image(session: CommandSession):
+    pritnt('1111')
     image_data = session.get('image', prompt='图呢？GKD')
+    pritnt(image_data)
     image_data_report = await get_image_data(image_data, SAUCENAO_KEY)
+    pritnt(image_data_report)
     
     if image_data_report:
         await session.send(image_data_report)
