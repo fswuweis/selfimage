@@ -1,0 +1,145 @@
+[2020-07-20 13:06:58,796 hoshino] ERROR: 缺少图片资源：./res/img/priconne/quick/r16-4-tw-0.png
+[2020-07-20 13:06:58,796 hoshino] ERROR: [Errno 2] No such file or directory: './res/img/priconne/quick/r16-4-tw-0.png'
+Traceback (most recent call last):
+  File "/home/fswuweis/HoshinoBot/hoshino/R.py", line 43, in cqcode
+    return MessageSegment.image(util.pic2b64(self.open()))
+  File "/home/fswuweis/HoshinoBot/hoshino/R.py", line 50, in open
+    return Image.open(self.path)
+  File "/home/fswuweis/.local/lib/python3.8/site-packages/PIL/Image.py", line 2878, in open
+    fp = builtins.open(filename, "rb")
+FileNotFoundError: [Errno 2] No such file or directory: './res/img/priconne/quick/r16-4-tw-0.png'
+[2020-07-20 13:06:58,798 hoshino] ERROR: 缺少图片资源：./res/img/priconne/quick/r16-4-tw-1.png
+[2020-07-20 13:06:58,798 hoshino] ERROR: [Errno 2] No such file or directory: './res/img/priconne/quick/r16-4-tw-1.png'
+Traceback (most recent call last):
+  File "/home/fswuweis/HoshinoBot/hoshino/R.py", line 43, in cqcode
+    return MessageSegment.image(util.pic2b64(self.open()))
+  File "/home/fswuweis/HoshinoBot/hoshino/R.py", line 50, in open
+    return Image.open(self.path)
+  File "/home/fswuweis/.local/lib/python3.8/site-packages/PIL/Image.py", line 2878, in open
+    fp = builtins.open(filename, "rb")
+FileNotFoundError: [Errno 2] No such file or directory: './res/img/priconne/quick/r16-4-tw-1.png'
+[2020-07-20 13:06:58,799 hoshino] ERROR: 缺少图片资源：./res/img/priconne/quick/r17-3-jp-1.png
+[2020-07-20 13:06:58,799 hoshino] ERROR: [Errno 2] No such file or directory: './res/img/priconne/quick/r17-3-jp-1.png'
+Traceback (most recent call last):
+  File "/home/fswuweis/HoshinoBot/hoshino/R.py", line 43, in cqcode
+    return MessageSegment.image(util.pic2b64(self.open()))
+  File "/home/fswuweis/HoshinoBot/hoshino/R.py", line 50, in open
+    return Image.open(self.path)
+  File "/home/fswuweis/.local/lib/python3.8/site-packages/PIL/Image.py", line 2878, in open
+    fp = builtins.open(filename, "rb")
+FileNotFoundError: [Errno 2] No such file or directory: './res/img/priconne/quick/r17-3-jp-1.png'
+[2020-07-20 13:06:58,800 hoshino] ERROR: 缺少图片资源：./res/img/priconne/quick/r17-3-jp-2.png
+[2020-07-20 13:06:58,800 hoshino] ERROR: [Errno 2] No such file or directory: './res/img/priconne/quick/r17-3-jp-2.png'
+Traceback (most recent call last):
+  File "/home/fswuweis/HoshinoBot/hoshino/R.py", line 43, in cqcode
+    return MessageSegment.image(util.pic2b64(self.open()))
+  File "/home/fswuweis/HoshinoBot/hoshino/R.py", line 50, in open
+    return Image.open(self.path)
+  File "/home/fswuweis/.local/lib/python3.8/site-packages/PIL/Image.py", line 2878, in open
+    fp = builtins.open(filename, "rb")
+FileNotFoundError: [Errno 2] No such file or directory: './res/img/priconne/quick/r17-3-jp-2.png'
+[2020-07-20 13:06:58,801 hoshino] ERROR: 缺少图片资源：./res/img/priconne/quick/r17-3-jp-3.png
+[2020-07-20 13:06:58,801 hoshino] ERROR: [Errno 2] No such file or directory: './res/img/priconne/quick/r17-3-jp-3.png'
+Traceback (most recent call last):
+  File "/home/fswuweis/HoshinoBot/hoshino/R.py", line 43, in cqcode
+    return MessageSegment.image(util.pic2b64(self.open()))
+  File "/home/fswuweis/HoshinoBot/hoshino/R.py", line 50, in open
+    return Image.open(self.path)
+  File "/home/fswuweis/.local/lib/python3.8/site-packages/PIL/Image.py", line 2878, in open
+    fp = builtins.open(filename, "rb")
+FileNotFoundError: [Errno 2] No such file or directory: './res/img/priconne/quick/r17-3-jp-3.png'
+[2020-07-20 13:06:59,099 hoshino] ERROR: 缺少图片资源：./res/img/priconne/quick/黄骑充电.jpg
+[2020-07-20 13:06:59,099 hoshino] ERROR: [Errno 2] No such file or directory: './res/img/priconne/quick/黄骑充电.jpg'
+Traceback (most recent call last):
+  File "/home/fswuweis/HoshinoBot/hoshino/R.py", line 43, in cqcode
+    return MessageSegment.image(util.pic2b64(self.open()))
+  File "/home/fswuweis/HoshinoBot/hoshino/R.py", line 50, in open
+    return Image.open(self.path)
+  File "/home/fswuweis/.local/lib/python3.8/site-packages/PIL/Image.py", line 2878, in open
+    fp = builtins.open(filename, "rb")
+FileNotFoundError: [Errno 2] No such file or directory: './res/img/priconne/quick/黄骑充电.jpg'
+[2020-07-20 13:06:59,100 hoshino] ERROR: 缺少图片资源：./res/img/priconne/KyaruMiniGame/注音文字.jpg
+[2020-07-20 13:06:59,101 hoshino] ERROR: [Errno 2] No such file or directory: './res/img/priconne/KyaruMiniGame/注音文字.jpg'
+Traceback (most recent call last):
+  File "/home/fswuweis/HoshinoBot/hoshino/R.py", line 43, in cqcode
+    return MessageSegment.image(util.pic2b64(self.open()))
+  File "/home/fswuweis/HoshinoBot/hoshino/R.py", line 50, in open
+    return Image.open(self.path)
+  File "/home/fswuweis/.local/lib/python3.8/site-packages/PIL/Image.py", line 2878, in open
+    fp = builtins.open(filename, "rb")
+FileNotFoundError: [Errno 2] No such file or directory: './res/img/priconne/KyaruMiniGame/注音文字.jpg'
+[2020-07-20 13:06:59,102 hoshino] ERROR: 缺少图片资源：./res/img/priconne/KyaruMiniGame/接龙.jpg
+[2020-07-20 13:06:59,102 hoshino] ERROR: [Errno 2] No such file or directory: './res/img/priconne/KyaruMiniGame/接龙.jpg'
+Traceback (most recent call last):
+  File "/home/fswuweis/HoshinoBot/hoshino/R.py", line 43, in cqcode
+    return MessageSegment.image(util.pic2b64(self.open()))
+  File "/home/fswuweis/HoshinoBot/hoshino/R.py", line 50, in open
+    return Image.open(self.path)
+  File "/home/fswuweis/.local/lib/python3.8/site-packages/PIL/Image.py", line 2878, in open
+    fp = builtins.open(filename, "rb")
+FileNotFoundError: [Errno 2] No such file or directory: './res/img/priconne/KyaruMiniGame/接龙.jpg'
+[2020-07-20 13:06:59,694 nonebot] ERROR: Failed to import "hoshino.modules.pcrclanbattle.clanbattlev3", error: No module named 'hoshino.modules.pcrclanbattle.exception'
+[2020-07-20 13:06:59,694 nonebot] ERROR: No module named 'hoshino.modules.pcrclanbattle.exception'
+Traceback (most recent call last):
+  File "/home/fswuweis/.local/lib/python3.8/site-packages/nonebot/plugin.py", line 249, in load_plugin
+    module = importlib.import_module(module_path)
+  File "/usr/lib/python3.8/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1014, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 991, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 975, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 671, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 783, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/home/fswuweis/HoshinoBot/hoshino/modules/pcrclanbattle/clanbattlev3/__init__.py", line 1, in <module>
+    from .cmdv3 import *
+  File "/home/fswuweis/HoshinoBot/hoshino/modules/pcrclanbattle/clanbattlev3/cmdv3.py", line 4, in <module>
+    from .battlemaster import BattleMaster as Master
+  File "/home/fswuweis/HoshinoBot/hoshino/modules/pcrclanbattle/clanbattlev3/battlemaster.py", line 4, in <module>
+    from .dao.sqlitedao import ClanDao, MemberDao, BattleDao
+  File "/home/fswuweis/HoshinoBot/hoshino/modules/pcrclanbattle/clanbattlev3/dao.py", line 6, in <module>
+    from ..exception import DatabaseError
+ModuleNotFoundError: No module named 'hoshino.modules.pcrclanbattle.exception'
+[2020-07-20 13:06:59,702 nonebot] ERROR: Failed to import "hoshino.modules.image.data_source", error: 'function' object has no attribute 'args_parser'
+[2020-07-20 13:06:59,703 nonebot] ERROR: 'function' object has no attribute 'args_parser'
+Traceback (most recent call last):
+  File "/home/fswuweis/.local/lib/python3.8/site-packages/nonebot/plugin.py", line 249, in load_plugin
+    module = importlib.import_module(module_path)
+  File "/usr/lib/python3.8/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1014, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 991, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 961, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "<frozen importlib._bootstrap>", line 1014, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 991, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 975, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 671, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 783, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/home/fswuweis/HoshinoBot/hoshino/modules/image/__init__.py", line 39, in <module>
+    @image.args_parser
+AttributeError: 'function' object has no attribute 'args_parser'
+[2020-07-20 13:06:59,713 hoshino] ERROR: [Errno 2] No such file or directory: '/home/fswuweis/HoshinoBot/hoshino/modules/kancolle/query/config.json'
+Traceback (most recent call last):
+  File "/home/fswuweis/HoshinoBot/hoshino/util.py", line 33, in load_config
+    with open(filename, encoding='utf8') as f:
+FileNotFoundError: [Errno 2] No such file or directory: '/home/fswuweis/HoshinoBot/hoshino/modules/kancolle/query/config.json'
+[2020-07-20 13:06:59,730 nonebot] ERROR: Failed to import "hoshino.modules.twitter.twitter", error: Missing authentication parameter
+[2020-07-20 13:06:59,730 nonebot] ERROR: Missing authentication parameter
+Traceback (most recent call last):
+  File "/home/fswuweis/.local/lib/python3.8/site-packages/nonebot/plugin.py", line 249, in load_plugin
+    module = importlib.import_module(module_path)
+  File "/usr/lib/python3.8/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1014, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 991, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 975, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 671, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 783, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/home/fswuweis/HoshinoBot/hoshino/modules/twitter/twitter.py", line 16, in <module>
+    api = TwitterAPI(cfg.consumer_key, cfg.consumer_secret, cfg.access_token_key, cfg.access_token_secret)
+  File "/home/fswuweis/.local/lib/python3.8/site-packages/TwitterAPI/TwitterAPI.py", line 63, in __init__
+    raise Exception('Missing authentication parameter')
+Exception: Missing authentication parameter
