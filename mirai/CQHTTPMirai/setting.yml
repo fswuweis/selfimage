@@ -1,0 +1,9 @@
+"3228343672":
+  ws_reverse:
+    enable: true
+    postMessageFormat: string
+    reverseHost: 127.0.0.1
+    reversePort: 8080
+    reversePath: /ws/
+    accessToken: null
+    reconnectInterval: 3000
